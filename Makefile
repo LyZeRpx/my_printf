@@ -15,7 +15,9 @@ SRC 	=	src/my_putchar.c	\
 
 NAME	=	libmy.a
 
-CFLAGS = -Wall -Wextra -I./include
+VPATH = ./include
+
+CFLAGS = -Wall -Wextra -I$(VPATH)
 
 OBJ	= $(SRC:.c=.o)
 
@@ -43,6 +45,6 @@ redo: re
 mem:
 	valgrind ./$(NAME)
 compil:
-	gcc $(CFLAGS) main.c -o my_printf -L -lmy
+	gcc $(CFLAGS) -L. main.c -o my_printf -lmy
 exe:
 	./$(NAME)
