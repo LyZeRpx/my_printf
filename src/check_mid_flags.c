@@ -7,10 +7,11 @@
 
 #include <stdarg.h>
 #include "../include/printers.h"
+#include "../include/flagshandling.h"
 
 int check_mid_flags(va_list arg, char mid_flag)
 {
-    switch(mid_flag) {
+    switch (mid_flag) {
     case 'o':
         my_putnbr_base(va_arg(arg, int), 8);
         break;
@@ -19,6 +20,7 @@ int check_mid_flags(va_list arg, char mid_flag)
         break;
     case 'X' :
         my_putnbr_base(va_arg(arg, int), 8);
+        break;
         default:
         check_hard_flags(arg, mid_flag);
     }

@@ -13,5 +13,6 @@ int my_put_nbr(int nb);
 int my_putnbr_base(int nb, int base);
 int my_putstr(char const *str);
 int my_putchar(char c);
+int my_putfloat(float decimal);
 
 #endif /* PRINTERS_H */

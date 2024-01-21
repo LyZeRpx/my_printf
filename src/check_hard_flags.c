@@ -11,10 +11,9 @@
 
 int check_hard_flags(va_list arg, char hard_flag)
 {
-    switch (hard_flag)
-    {
+    switch (hard_flag) {
     case 'f':
-        my_putfloat(va_arg(arg, float));
+        my_putfloat(va_arg(arg, double));
         break;
     default:
         return 84;
