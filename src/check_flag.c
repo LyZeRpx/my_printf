@@ -9,11 +9,11 @@
 #include "../include/printers.h"
 #include "../include/flagshandling.h"
 
-int check_flag(va_list arg, char flag)
+int check_flag(va_list arg, char flag, int *count)
 {
     switch (flag) {
     case 'd':
-        my_put_nbr(va_arg(arg, int));
+        *count += my_put_nbr(va_arg(arg, int));
         break;
     case 'i':
         my_put_nbr(va_arg(arg, int));
@@ -28,5 +28,5 @@ int check_flag(va_list arg, char flag)
         check_mid_flags(arg, flag);
         break;
     }
-    return 0;
+    return count;
 }

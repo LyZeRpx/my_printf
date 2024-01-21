@@ -6,6 +6,7 @@
 */
 
 #include <stdarg.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "../include/printers.h"
 #include "../include/flagshandling.h"
@@ -20,7 +21,7 @@ int my_printf(char const *format, ...)
         if (format[i] != '%') {
             my_putchar(format[i]);
         } else {
-            check_flag(arg, format[i + 1]);
+            check_flag(arg, format[i + 1], &i);
             i++;
         }
     }

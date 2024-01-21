@@ -10,24 +10,41 @@
 
 int my_put_nbr(int nb)
 {
+    int count = 0;
     int div = 1;
-    int stock = 0;
+    int i = 0;
+
+    for (; div < nb; div *= 10) {
+        i++;
+    }
+    nb = special_cases(nb, &count);
+    for (; i != 0; i--) {
+        if ((nb < 9)) {
+            my_putchar(nb + 48);
+            count ++;
+            return count;
+        } else {
+            my_putchar(((nb % (div)) / (div / 10)) + 48);
+            div /= 10;
+        }
+    }
+    return count;
+}
+
+int special_cases(int nb, int *count)
+{
+    int mul = 1;
 
     if (nb < 0) {
         my_putchar('-');
-        nb = nb * -1;
+        nb *= (-1);
     }
-    while (nb > div) {
-        div = div * 10;
+    if (nb == 0) {
+        my_putchar('0');
     }
-    div = div / 10;
-    while (nb > 9) {
-        stock = nb;
-        nb = nb / div;
-        my_putchar(nb + 48);
-        nb = stock - nb * div;
-        div = div / 10;
+    while (nb == mul) {
+        my_putchar('1');
+        mul *= 10;
     }
-    my_putchar(nb + 48);
-    return 0;
+    return nb;
 }
