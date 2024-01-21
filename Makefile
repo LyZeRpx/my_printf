@@ -15,9 +15,7 @@ SRC 	=	src/my_putchar.c	\
 
 NAME	=	libmy.a
 
-CFLAGS = -Wall -Wextra
-
-LDFLAGS = -lmy
+CFLAGS = -Wall -Wextra -I./include
 
 OBJ	= $(SRC:.c=.o)
 
@@ -42,13 +40,9 @@ erase: fclean
 redo: re
 	clear
 	clean
-code:
-	clear
-	coding-style . .
-	cat coding-style-reports.log
 mem:
 	valgrind ./$(NAME)
 compil:
-	gcc -o $(NAME) -L -lmy -I
+	gcc $(CFLAGS) main.c -o my_printf -L -lmy
 exe:
 	./$(NAME)
