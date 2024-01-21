@@ -19,7 +19,7 @@ int check_flag(va_list arg, char flag)
         my_put_nbr(va_arg(arg, int));
         break;
     case 'c':
-        my_putchar(va_arg(arg, char));
+        my_putchar(va_arg(arg, int));
         break;
     case 's':
         my_putstr(va_arg(arg, char *));
