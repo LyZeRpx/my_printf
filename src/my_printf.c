@@ -13,9 +13,10 @@
 int my_printf(char const *format, ...)
 {
     va_list arg;
+    int i = 0;
 
     va_start(arg, format);
-    for (int i = 0; format[i] != '\0'; i++) {
+    for (; format[i] != '\0'; i++) {
         if (format[i] != '%') {
             my_putchar(format[i]);
         } else {
@@ -24,5 +25,5 @@ int my_printf(char const *format, ...)
         }
     }
     va_end(arg);
-    return 0;
+    return i;
 }
