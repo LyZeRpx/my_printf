@@ -16,7 +16,7 @@ int main(int ac, char **av)
     char *str2 = "jours";
     float lol = 0.256;
 
-    ///my_printf("%c%s %i %s nous irons au mcdo", a, str, i ,str2);
-    my_putfloat(lol);
+    my_printf("my_printf : %%d\n");
+    printf("printf : %%d\n");
     return 0;
 }
