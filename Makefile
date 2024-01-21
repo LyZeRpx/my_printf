@@ -7,11 +7,15 @@
 
 CC = gcc
 
-SRC 	=	src/my_putchar.c	\
-			src/my_putstr.c		\
-			src/my_put_nbr.c	\
-			src/check_flag.c	\
-			src/my_printf.c		\
+SRC 	=	src/check_flag.c			\
+			src/check_mid_flags			\
+			src/check_hard_flags.c		\
+			src/my_put_nbr_base.c		\
+			src/my_put_nbr.c			\
+			src/my_putstr.c				\
+			src/my_putchar.c			\
+			src/my_putfloat.c			\
+			src/my_printf.c				\
 
 NAME	=	libmy.a
 

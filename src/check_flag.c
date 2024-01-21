@@ -7,7 +7,7 @@
 
 #include <stdarg.h>
 #include "../include/printers.h"
-#include <stdlib.h>
+#include "../include/flagshandling.h"
 
 int check_flag(va_list arg, char flag)
 {
@@ -23,9 +23,10 @@ int check_flag(va_list arg, char flag)
         break;
     case 's':
         my_putstr(va_arg(arg, char *));
+        break;
     default:
+        check_mid_flags(arg, flag);
         break;
     }
-
     return 0;
 }

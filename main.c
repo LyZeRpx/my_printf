@@ -10,10 +10,11 @@
 
 int main(int ac, char **av)
 {
-    char a = 'a';
-    char *str = "Bonjour";
-    int i = 21;
+    char a = 'D';
+    char *str = "ans";
+    int i = 3;
+    char *str2 = "jours";
 
-    my_printf("%c", a);
+    my_printf("%c%s %i %s nous irons au mcdo", a, str, i ,str2);
     return 0;
 }
