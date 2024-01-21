@@ -6,6 +6,7 @@
 */
 
 #include <stdarg.h>
+#include <stdlib.h>
 #include "../include/printers.h"
 #include "../include/backend.h"
 
@@ -15,9 +16,11 @@ int my_printf(char const *format, ...)
 
     va_start(arg, format);
     for (int i = 0; format[i] != '\0'; i++) {
-        my_putchar(format[i]);
-        if (format[i] == '%') {
-            check_flag(format[i + 1], va_arg(arg, void *));
+        if (format[i] != '%') {
+            my_putchar(format[i]);
+        } else {
+            check_flag(arg, format[i + 1]);
+            i++;
         }
     }
     va_end(arg);

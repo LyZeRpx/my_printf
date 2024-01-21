@@ -9,8 +9,11 @@
 
 int my_putstr(char const *str)
 {
-    for (int i = 0; str[i] != '\0'; i++) {
+    int i = 0;
+
+    while (str[i] != '\0') {
         my_putchar(str[i]);
+        i++;
     }
     return 0;
 }

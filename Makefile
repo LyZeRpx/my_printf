@@ -35,7 +35,7 @@ fclean: clean
 re: fclean all
 
 debug: CFLAGS += -g3
-debug: re
+debug: compil
 
 erase: fclean
 	clear

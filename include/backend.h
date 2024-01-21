@@ -8,6 +8,6 @@
 #ifndef BACKEND_H
     #define BACKEND_H
 
-int check_flag(char flag, void *data);
+int check_flag(va_list arg, char flag);
 
 #endif /* BACCKEND_H */
