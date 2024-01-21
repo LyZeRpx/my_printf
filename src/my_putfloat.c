@@ -9,7 +9,10 @@
 
 int my_putfloat(float decimal)
 {
-    decimal += 0;
+    int result = 0;
 
+    for (int i = 0; decimal < i; i++) {
+        decimal *= 10;
+    }
     return 0;
 }
