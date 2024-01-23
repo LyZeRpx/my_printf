@@ -13,13 +13,13 @@ int check_mid_flags(va_list arg, char mid_flag)
 {
     switch (mid_flag) {
     case 'o':
-        my_putnbr_base(va_arg(arg, int), 8);
+        my_put_nbr_base(va_arg(arg, int), 8);
         break;
     case 'x':
-        my_putnbr_base(va_arg(arg, int), 8);
+        my_put_nbr_base(va_arg(arg, int), 16);
         break;
     case 'X' :
-        my_putnbr_base(va_arg(arg, int), 8);
+        my_put_nbr_base(va_arg(arg, int), 16);
         break;
     case '%':
         my_putchar('%');

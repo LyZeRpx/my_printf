@@ -16,17 +16,17 @@ int check_flag(va_list arg, char flag, int *count)
         *count += my_put_nbr(va_arg(arg, int));
         break;
     case 'i':
-        my_put_nbr(va_arg(arg, int));
+        *count += my_put_nbr(va_arg(arg, int));
         break;
     case 'c':
-        my_putchar(va_arg(arg, int));
+        *count += my_putchar(va_arg(arg, int));
         break;
     case 's':
-        my_putstr(va_arg(arg, char *));
+        *count += my_putstr(va_arg(arg, char *));
         break;
     default:
         check_mid_flags(arg, flag);
         break;
     }
-    return count;
+    return *count;
 }

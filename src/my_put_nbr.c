@@ -22,6 +22,7 @@ int my_put_nbr(int nb)
         if ((nb < 9)) {
             my_putchar(nb + 48);
             count ++;
+            div /= 10;
             return count;
         } else {
             my_putchar(((nb % (div)) / (div / 10)) + 48);
@@ -38,11 +39,12 @@ int special_cases(int nb, int *count)
     if (nb < 0) {
         my_putchar('-');
         nb *= (-1);
+        my_put_nbr(nb);
     }
     if (nb == 0) {
         my_putchar('0');
     }
-    while (nb == mul) {
+    if (nb == mul || nb == mul * -1) {
         my_putchar('1');
         mul *= 10;
     }

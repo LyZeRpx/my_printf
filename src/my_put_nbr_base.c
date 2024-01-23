@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "../include/printers.h"
 
-int my_putnbr_base(int nb, int base)
+int my_put_nbr_base(int nb, int base)
 {
     int div = 1;
     int stock = 0;

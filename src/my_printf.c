@@ -15,16 +15,17 @@ int my_printf(char const *format, ...)
 {
     va_list arg;
     int i = 0;
+    int count = 0;
 
     va_start(arg, format);
     for (; format[i] != '\0'; i++) {
         if (format[i] != '%') {
             my_putchar(format[i]);
         } else {
-            check_flag(arg, format[i + 1], &i);
+            count += check_flag(arg, format[i + 1], &i);
             i++;
         }
     }
     va_end(arg);
-    return i;
+    return i + count;
 }
