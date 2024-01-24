@@ -1,52 +1,21 @@
 /*
 ** EPITECH PROJECT, 2023
-** my_put_nbr
+** my_printf
 ** File description:
-** displays an int on the screen
+** my_put_nbr.c
 */
 
-#include <stdio.h>
-#include "../include/printers.h"
+#include "printers.h"
 
 int my_put_nbr(int nb)
 {
-    int count = 0;
-    int div = 1;
-    int i = 0;
-
-    for (; div < nb; div *= 10) {
-        i++;
-    }
-    nb = special_cases(nb, &count);
-    for (; i != 0; i--) {
-        if ((nb < 9)) {
-            my_putchar(nb + 48);
-            count ++;
-            div /= 10;
-            return count;
-        } else {
-            my_putchar(((nb % (div)) / (div / 10)) + 48);
-            div /= 10;
-        }
-    }
-    return count;
-}
-
-int special_cases(int nb, int *count)
-{
-    int mul = 1;
-
     if (nb < 0) {
+        nb *= -1;
         my_putchar('-');
-        nb *= (-1);
-        my_put_nbr(nb);
     }
-    if (nb == 0) {
-        my_putchar('0');
+    if (nb != 0) {
+        my_put_nbr(nb / 10);
+        my_putchar((nb % 10) + 48);
     }
-    if (nb == mul || nb == mul * -1) {
-        my_putchar('1');
-        mul *= 10;
-    }
-    return nb;
+    return 0;
 }

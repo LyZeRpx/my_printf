@@ -24,6 +24,9 @@ int check_mid_flags(va_list arg, char mid_flag)
     case '%':
         my_putchar('%');
         break;
+    case 'b':
+        my_put_nbr_base(va_arg(arg, int), 2);
+        break;
         default:
         check_hard_flags(arg, mid_flag);
     }

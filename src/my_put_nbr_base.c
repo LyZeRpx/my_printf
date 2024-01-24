@@ -1,33 +1,21 @@
 /*
 ** EPITECH PROJECT, 2023
-** PUTNVR
+** my_printf
 ** File description:
-** NBR
+** my_put_nbr_base.c
 */
 
-#include <stdio.h>
-#include "../include/printers.h"
+#include "printers.h"
 
-int my_put_nbr_base(int nb, int base)
+int my_put_nbr_base(int nb, int base, int)
 {
-    int div = 1;
-    int stock = 0;
-
     if (nb < 0) {
+        nb *= -1;
         my_putchar('-');
-        nb = nb * -1;
     }
-    while (nb > div) {
-        div = div * base;
+    if (nb != 0) {
+        my_put_nbr_base((nb / base), base);
+        my_putchar((nb % base) + 48);
     }
-    div = div / base;
-    while (nb > base - 1) {
-        stock = nb;
-        nb = nb / div;
-        my_putchar(nb + 48);
-        nb = stock - nb * div;
-        div = div / base;
-    }
-    my_putchar(nb + 48);
     return 0;
 }
