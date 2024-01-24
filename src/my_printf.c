@@ -27,5 +27,5 @@ int my_printf(char const *format, ...)
         }
     }
     va_end(arg);
-    return i;
+    return i + count;
 }

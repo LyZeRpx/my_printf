@@ -11,7 +11,7 @@
 
 int main(void)
 {
-    int i = 2468;
+    float f = 1.3569;
 
-    return my_printf("%d in binary is %b", i, i);
+    return my_printf("%f", f);
 }

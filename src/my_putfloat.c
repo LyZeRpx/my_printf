@@ -9,10 +9,19 @@
 
 int my_putfloat(float decimal)
 {
-    int result = 0;
+    int intpart = 0;
+    int i = 5;
 
-    for (int i = 0; decimal < i; i++) {
+    if (decimal < 0) {
+        decimal *= -1;
+        my_putchar('-');
+    }
+    while (i + 1 != 0) {
+        intpart = decimal;
+        decimal -= ((float) intpart);
+        my_putchar(intpart + 48);
         decimal *= 10;
+        i--;
     }
     return 0;
 }

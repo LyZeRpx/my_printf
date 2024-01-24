@@ -7,11 +7,13 @@
 
 #include "printers.h"
 
-int my_put_nbr_base(int nb, int base, int)
+int my_put_nbr_base(int nb, int base)
 {
     if (nb < 0) {
         nb *= -1;
-        my_putchar('-');
+        if (base != 2) {
+            my_putchar('-');
+        }
     }
     if (nb != 0) {
         my_put_nbr_base((nb / base), base);
